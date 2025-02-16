@@ -1,0 +1,203 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: double #020080; /* Estilo de borde */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de color */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0 2rem;
+    gap: 0.8rem;
+}
+
+/* Estilos para modo claro */
+body.light {
+    background-color: #ffffff; /* Color de fondo claro */
+    color: #000000; /* Color de texto oscuro */
+}
+
+/* Estilos para modo oscuro */
+body.dark {
+    background-color: #333333; /* Color de fondo oscuro */
+    color: #ffffff; /* Color de texto claro */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border: groove;
+}
+
+h1, h2, h3 {
+    margin: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 2rem;
+}
+
+.info__server, .info__stats, .info__messages, .info__admin {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    gap: 30px;
+    font-size: 14px;
+}
+
+#messages-list {
+    height: 280px;
+    width: 100%; /* Ancho responsivo */
+    max-width: 400px; /* Ancho máximo */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #d0ecf8;
+    border: groove aqua;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+/* Estilos para el estado de los administradores */
+.status-conectado {
+    color: rgb(20, 185, 20); /* Color verde para "Conectado" */
+    font-weight: 700;
+}
+
+.status-desconectado {
+    color: rgb(88, 88, 88); /* Color gris para "Desconectado" */
+    font-weight: 700;
+}
+
+.popup-message {
+    opacity: 1; /* Opacidad inicial */
+    transition: opacity 1s; /* Transición suave para el efecto de desvanecimiento */
+    margin: 5px 0; /* Espaciado entre mensajes */
+    background-color: white; /* Fondo blanco para los mensajes */
+    padding: 10px; /* Relleno para los mensajes */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para los mensajes */
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    border: groove;
+    gap: 20px;
+    padding: 1.5rem;
+}
+
+/* Estilos específicos para el modo oscuro */
+.dark .popup-message {
+    color: rgb(255, 255, 255); /* Cambiar el color de la fuente a gris en modo oscuro */
+    background-color: rgb(72, 72, 72);
+}
+
+.dark #messages-list {
+    background-color: rgba(126, 126, 126, 0.677);
+}
+
+.dark #server-icon, #admin-icon, #statics-icon, #msg-icon {
+    background-color: rgba(255, 255, 255, 0.866);
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+.dark .status-desconectado {
+    color: rgba(255, 255, 255, 0.866);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+
+    .info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .info__server, .info__stats, .info__admin, .info__messages {
+        display: flex;
+        margin: 5px 0;
+        font-size: 14px;
+        gap: 1px;
+    }
+
+    .info__messages {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #messages-list {
+        max-width:90%; /* Ancho máximo en pantallas pequeñas */
+    }
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px; /* Reducir tamaño de fuente en pantallas muy pequeñas */
+    }
+
+    h2, h3 {
+        text-align: left; /* Alinear al inicio */
+    }
+
+    button {
+        width: 70%; /* Botones de ancho completo en pantallas pequeñas */
+        margin-bottom: 0.1rem; /* Espaciado entre botones */
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info__server, .info__stats, .info__admin, .info__messages {
+        display: flex; /* Mostrar elementos en línea */
+        flex-direction: row; /* Cambiar a filas en pantallas pequeñas */
+        flex-wrap: wrap; /* Ajustar elementos en pantallas pequeñas */
+        margin: 5px 0; /* Espaciado vertical */
+        font-size: 12px;
+        gap: 1px;
+        align-content: center;
+    }
+
+    .chart {
+        padding: 1rem; /* Reducir padding en pantallas pequeñas */
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Dashboard de Discord</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Incluir Chart.js -->
+</head>
+<body class="light"> <!-- Establecer modo claro por defecto -->
+    <div class="container">
+        <header>
+            <h1>Dashboard del Servidor de Discord</h1>
+        </header>
+        <main> 
+            <section class="controls">
+                <button id="refresh-data">Actualizar Datos</button> <!-- Botón para actualizar datos -->
+                <button id="toggle-mode">🌚 Cambiar a Modo Oscuro</button> <!-- Botón para cambiar entre modos -->
+            </section>
+            <section class="info">
+                <div class="info__server">
+                    <img src="./img/users.png" alt="Server Icon" id="server-icon"> <!-- Icono del servidor -->
+                    <h3>Total usuarios</h3>
+                    <p id="member-count">0</p> <!-- Muestra el número total de miembros -->
+                </div>
+                <div class="info__admin">
+                    <img src="./img/admin.png" alt="Admin Icon" id="admin-icon"> <!-- Icono del administrador -->
+                    <h3>Estado de los Administradores</h3>
+                    <ul id="admins-status"></ul> <!-- Estado de los administradores -->
+                </div>
+                <div class="info__messages">
+                    <img src="./img/msg.png" alt="Message Icon" id="msg-icon"> <!-- Icono de mensajes -->
+                    <h3>Últimos 5 mensajes</h3>
+                    <ul id="messages-list"></ul> <!-- Lista de últimos mensajes -->
+                </div>
+                <div class="info__stats">
+                    <img src="./img/statics.png" alt="Statics Icon" id="statics-icon"> <!-- Icono de estadísticas -->
+                    <h3>Estadísticas de Mensajes</h3>
+                    <p id="message-count">Total de mensajes: 0</p> <!-- Muestra el número total de mensajes -->
+                </div>
+            </section>
+            <section class="chart">
+                <h2>Actividad del Servidor</h2>
+                <canvas id="activityChart"></canvas> <!-- Gráfico de actividad -->
+            </section>
+        </main>
+        <script src="script.js"></script> <!-- Enlace al archivo JS -->
+    </div>
+    <footer class="footer">
+        <p>Elaborado por: Dev. Alejandra Toloza | 2025 © </p>
+    </footer>
+</body>
+</html>
